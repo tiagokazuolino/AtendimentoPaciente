@@ -52,5 +52,14 @@ public class Fila implements IFila {
 		}
 		return null;
 	}
-
+	
+	public Paciente Select(long cpf) {
+		Paciente paciente = null;
+		for(int i = 0; i< N; i++) {
+			if(dados[i].getCpf() == cpf) {
+				paciente = dados[i];
+			} 
+		}
+		return paciente;
+	}
 }

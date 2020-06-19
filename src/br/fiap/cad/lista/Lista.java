@@ -31,8 +31,8 @@ public class Lista implements ILista {
 		} else {
 			NO aux = lista;
 			boolean achou = false;
-			while(aux.prox != null && !achou) {
-				if(aux.prox.dado.getIdade() < novo.dado.getIdade()) {
+			while (aux.prox != null && !achou) {
+				if (aux.prox.dado.getIdade() < novo.dado.getIdade()) {
 					aux = aux.prox;
 				} else {
 					achou = true;
@@ -50,24 +50,22 @@ public class Lista implements ILista {
 			if (p.equals(lista.dado)) {
 				lista = lista.prox;
 				ok = true;
-			}
-			else {
+			} else {
 				NO aux = lista;
 				boolean achou = false;
 				while (aux.prox != null && !achou) {
 					if (!aux.prox.dado.equals(p)) {
 						aux = aux.prox;
-					}
-					else {
+					} else {
 						achou = true;
-					}						
+					}
 				}
 				if (achou) {
 					aux.prox = aux.prox.prox;
 					ok = true;
-					}
-				}				
+				}
 			}
+		}
 		return ok;
 	}
 
@@ -79,6 +77,27 @@ public class Lista implements ILista {
 			retorno.add(aux.dado);
 			aux = aux.prox;
 		}
-		return retorno;		
+		return retorno;
+	}
+
+	public int Count() {
+		int c = 0;
+		NO aux = lista;
+		while (aux != null) {
+			c++;
+			aux = aux.prox;
+		}
+		return c;
+	}
+
+	public Paciente Select(long cpf) {
+		NO aux = lista;
+		while (aux != null) {
+			if (aux.dado.getCpf() == cpf) {
+				return aux.dado;
+			}
+			aux = aux.prox;
+		}
+		return null;
 	}
 }

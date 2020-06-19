@@ -45,4 +45,14 @@ public class Pilha implements IPilha {
 	public Paciente Top() {
 		return !isEmpty() ? pilha[topo - 1] : null;
 	}
+	
+	public Paciente Select(long cpf) {
+		Paciente paciente = null;
+		for(int i = 0; i< N; i++) {
+			if(pilha[i].getCpf() == cpf) {
+				paciente = pilha[i];
+			} 
+		}
+		return paciente;
+	}
 }
