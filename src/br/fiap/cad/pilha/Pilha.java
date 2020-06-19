@@ -3,41 +3,46 @@ package br.fiap.cad.pilha;
 import br.fiap.entity.Paciente;
 
 public class Pilha implements IPilha {
+	private int N;
+	private Paciente[] pilha;
+	private int topo;
 
 	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+	public void Init(int value) {
+		this.N = value;
+		this.pilha = new Paciente[value];
+		this.topo = 0;
 	}
 
 	@Override
 	public boolean isFull() {
-		// TODO Auto-generated method stub
-		return false;
+		return topo == N ? true : false;
 	}
 
 	@Override
-	public void Init(int value) {
-		// TODO Auto-generated method stub
-		
+	public boolean isEmpty() {
+		return topo == 0 ? true : false;
 	}
 
 	@Override
 	public void Push(Paciente elem) {
-		// TODO Auto-generated method stub
-		
+		if (!isFull()) {
+			pilha[topo] = elem;
+			topo++;
+		}
 	}
 
 	@Override
 	public Paciente Pop() {
-		// TODO Auto-generated method stub
+		if (!isEmpty()) {
+			topo--;
+			return pilha[topo];
+		}
 		return null;
 	}
 
 	@Override
 	public Paciente Top() {
-		// TODO Auto-generated method stub
-		return null;
+		return !isEmpty() ? pilha[topo - 1] : null;
 	}
-
 }
