@@ -60,7 +60,7 @@ public class Programa {
 				break;
 			case 6:
 				String textoListaInternacao = listaInternacao.Show();
-				showMessageDialog(null, textoListaInternacao == null ? "Fila Vazia" : textoListaInternacao);
+				showMessageDialog(null, textoListaInternacao == null ? "Lista Vazia" : textoListaInternacao);
 				break;
 			default:
 				showMessageDialog(null, "Voce digitou umnumero invalido: \n" + opcao);
