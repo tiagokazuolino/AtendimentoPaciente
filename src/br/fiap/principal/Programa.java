@@ -10,6 +10,7 @@ import br.fiap.menu.Controle;
 import br.fiap.menu.Opcoes;
 
 public class Programa {
+	
 	private static int opcao = 0;
 	private static int leitos = 10;
 	private static Fila filaInternacao = new Fila();
@@ -52,15 +53,15 @@ public class Programa {
 				break;
 			case 4:
 				String textoFilaAtendimento = filaAtendimento.Show();
-				showMessageDialog(null, textoFilaAtendimento == null ? "Fila Vazia" : textoFilaAtendimento);
+				showMessageDialog(null, textoFilaAtendimento == "" ? "Fila Vazia" : textoFilaAtendimento);
 				break;
 			case 5:
 				String textoFilaInternacao = filaInternacao.Show();
-				showMessageDialog(null, textoFilaInternacao == null ? "Fila Vazia" : textoFilaInternacao);
+				showMessageDialog(null, textoFilaInternacao == "" ? "Fila Vazia" : textoFilaInternacao);
 				break;
 			case 6:
 				String textoListaInternacao = listaInternacao.Show();
-				showMessageDialog(null, textoListaInternacao == null ? "Lista Vazia" : textoListaInternacao);
+				showMessageDialog(null, textoListaInternacao == "" ? "Lista Vazia" : textoListaInternacao);
 				break;
 			default:
 				showMessageDialog(null, "Voce digitou umnumero invalido: \n" + opcao);

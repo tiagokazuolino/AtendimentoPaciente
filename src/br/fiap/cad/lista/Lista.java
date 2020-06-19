@@ -68,7 +68,7 @@ public class Lista implements ILista {
 
 	@Override
 	public String Show() {
-		String retorno = null;
+		String retorno = "";
 		NO aux = lista;
 		while (aux != null) {
 			retorno += aux.dado.getNome() + "\t" +  aux.dado.getCpf() + "\t" +  aux.dado.getSexo() + "\t" + aux.dado.getIdade();
