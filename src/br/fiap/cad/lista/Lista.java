@@ -1,8 +1,5 @@
 package br.fiap.cad.lista;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.fiap.entity.Paciente;
 
 public class Lista implements ILista {
@@ -70,11 +67,12 @@ public class Lista implements ILista {
 	}
 
 	@Override
-	public List<Paciente> Show() {
-		List<Paciente> retorno = new ArrayList<Paciente>();
+	public String Show() {
+		String retorno = null;
 		NO aux = lista;
 		while (aux != null) {
-			retorno.add(aux.dado);
+			retorno += aux.dado.getNome() + "\t" +  aux.dado.getCpf() + "\t" +  aux.dado.getSexo() + "\t" + aux.dado.getIdade();
+			retorno += "\n";
 			aux = aux.prox;
 		}
 		return retorno;

@@ -3,15 +3,15 @@ package br.fiap.entity;
 public abstract class Pessoa {
 	private String nome;
 	private long cpf;
-
-	public Pessoa(String nome, long cpf) {
+	protected String sexo;
+	
+	public Pessoa(String nome, long cpf, String sexo) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
+		this.sexo = sexo;
 	}
-
-	protected String sexo;
-
+	
 	public String getSexo() {
 		return sexo;
 	}

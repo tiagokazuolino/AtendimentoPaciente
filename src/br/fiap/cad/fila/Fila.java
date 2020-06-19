@@ -11,6 +11,7 @@ public class Fila implements IFila {
 	public void Init(int value) {
 		this.N = value;
 		this.ini = this.fim = this.cont = 0;
+		dados = new Paciente[N];
 	}
 
 	@Override
@@ -55,11 +56,20 @@ public class Fila implements IFila {
 	
 	public Paciente Select(long cpf) {
 		Paciente paciente = null;
-		for(int i = 0; i< N; i++) {
+		for(int i = 0; i< cont; i++) {
 			if(dados[i].getCpf() == cpf) {
 				paciente = dados[i];
 			} 
 		}
 		return paciente;
+	}
+	
+	public String Show() {
+		String aux = "";
+		for(int i = 0; i< cont; i++) {
+			aux += dados[i].getNome() + " | " +  dados[i].getCpf() + " | " +  dados[i].getSexo() + " | " + dados[i].getIdade();
+			aux += "\n";
+		}
+		return aux;
 	}
 }

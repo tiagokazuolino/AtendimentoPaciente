@@ -55,4 +55,13 @@ public class Pilha implements IPilha {
 		}
 		return paciente;
 	}
+	
+	public String Show() {
+		String aux = null;
+		for(int i = 0; i< N; i++) {
+			aux += pilha[i].getNome() + " | " +  pilha[i].getCpf() + " | " +  pilha[i].getSexo();
+			aux += "\n";
+		}
+		return aux;
+	}
 }
