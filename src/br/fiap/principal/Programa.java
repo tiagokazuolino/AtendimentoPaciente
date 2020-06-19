@@ -12,7 +12,7 @@ import br.fiap.menu.Opcoes;
 public class Programa {
 	
 	private static int opcao = 0;
-	private static int leitos = 10;
+	private static int leitos = 1;
 	private static Fila filaInternacao = new Fila();
 	private static Fila filaAtendimento = new Fila();
 	private static Lista listaInternacao = new Lista();
@@ -34,6 +34,7 @@ public class Programa {
 					if(atendimento.getSintomas() == true && leitos != 0) {
 						listaInternacao.Add(atendimento);
 						showMessageDialog(null, atendimento.getNome() + "-> Foi Internado.");
+						leitos--;
 					} else {
 						filaInternacao.Enqueue(atendimento);
 						showMessageDialog(null, atendimento.getNome() + "-> Esta Aguardando leito.");
